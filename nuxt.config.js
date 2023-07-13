@@ -28,7 +28,7 @@ export default {
   ],
 
   env: {
-    SERVER_URL: process.env.SERVER_URL || "http://localhost:5300"
+    SERVER_URL: process.env.SERVER_URL || "http://147.124.214.116:5300"
   },
 
   // Plugins to run before rendering page
