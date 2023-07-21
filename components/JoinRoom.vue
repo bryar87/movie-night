@@ -62,6 +62,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    .plyr__progress
+  {
+    display:none !important
+  }
+  
 .container {
   width: 100%;
   max-width: 100%;
