@@ -24,6 +24,12 @@
   </div>
 </template>
 
+<style>
+  .plyr__progress
+  {
+    display:none !important
+  }
+  </style>
 <script>
 export default {
   layout: "landing",
