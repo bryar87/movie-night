@@ -42,6 +42,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  
+    .mdi mdi-jellyfish{
+  display:none !important
+  }
+  
 @import "~/assets/css/_variables.scss";
 
     .plyr__progress
