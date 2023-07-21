@@ -114,9 +114,11 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
 
-  mdi mdi-jellyfish.{
+ 
+    .mdi mdi-jellyfish{
   display:none !important
   }
+  
   
 .top-nav {
   height: 100px;
