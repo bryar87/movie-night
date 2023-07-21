@@ -87,6 +87,10 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
 
+    .mdi mdi-jellyfish{
+  display:none !important
+  }
+  
 button {
   margin: 0 auto;
 }
