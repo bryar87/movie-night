@@ -24,12 +24,7 @@
   </div>
 </template>
 
-<style>
-  .plyr__progress
-  {
-    display:none !important
-  }
-  </style>
+ 
 <script>
 export default {
   layout: "landing",
@@ -49,6 +44,11 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
 
+    .plyr__progress
+  {
+    display:none !important
+  }
+  
 button {
   margin: 0 auto;
 }
