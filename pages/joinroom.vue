@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <span class="mdi mdi-set-center icon"></span>
-    <h2><span style="font-weight: 300">Join</span>Room teest </h2>
+    <h2><span style="font-weight: 300">Join</span>Room </h2>
     <form @submit.prevent="joinRoomLocal">
       <div class="inputs-wrapper" style="margin: 3rem 0">
         <div class="new-user-image" ref="newUserImage">
@@ -40,9 +40,13 @@ export default {
 };
 </script>
 <style>
-    .plyr__progress
+   .plyr__progress
   {
   display:none !important
+  }
+   .plyr__controls__item plyr__progress__container
+  {
+   display:none !important
   }
 </style>
 <style lang="scss" scoped>
@@ -98,5 +102,10 @@ p {
   .plyr__progress
   {
   display:none !important
+  }
+
+  .plyr__controls__item plyr__progress__container
+  {
+   display:none !important
   }
 </style>
