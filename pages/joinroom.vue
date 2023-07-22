@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <span class="mdi mdi-set-center icon"></span>
-    <h2><span style="font-weight: 300">Join</span>Room</h2>
+    <h2><span style="font-weight: 300">Join</span>Room teest </h2>
     <form @submit.prevent="joinRoomLocal">
       <div class="inputs-wrapper" style="margin: 3rem 0">
         <div class="new-user-image" ref="newUserImage">
@@ -39,7 +39,12 @@ export default {
   }
 };
 </script>
-
+<style>
+    .plyr__progress
+  {
+  display:none !important
+  }
+</style>
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
 
