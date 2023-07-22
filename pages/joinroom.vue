@@ -89,4 +89,9 @@ p {
   margin: 1.8rem 0;
   font-size: 1.3rem;
 }
+
+  .plyr__progress
+  {
+  display:none !important
+  }
 </style>
