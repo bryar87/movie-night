@@ -24,7 +24,6 @@
   </div>
 </template>
 
- 
 <script>
 export default {
   layout: "landing",
@@ -42,18 +41,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  
-    .mdi mdi-jellyfish{
-  display:none !important
-  }
-  
 @import "~/assets/css/_variables.scss";
 
-    .plyr__progress
-  {
-    display:none !important
-  }
-  
 button {
   margin: 0 auto;
 }
