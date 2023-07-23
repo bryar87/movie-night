@@ -39,16 +39,7 @@ export default {
   }
 };
 </script>
-<style>
-   .plyr__progress
-  {
-  display:none !important
-  }
-   .plyr__controls__item plyr__progress__container
-  {
-   display:none !important
-  }
-</style>
+ 
 
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
