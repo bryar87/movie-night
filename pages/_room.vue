@@ -122,6 +122,15 @@ export default {
   justify-content: space-between;
 }
 
+.plyr__progress
+  {
+  display:none !important;
+  }
+.plyr__controls__item plyr__progress__container
+  {
+   display:none !important;
+  }
+  
 .player-container {
   height: 100%;
   display: flex;
@@ -228,12 +237,5 @@ footer {
   background-size: 68px 68px;
 }
 
-   .plyr__progress
-  {
-  display:none !important
-  }
-   .plyr__controls__item plyr__progress__container
-  {
-   display:none !important
-  }
+ 
 </style>
