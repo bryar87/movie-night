@@ -9,7 +9,7 @@
       <nuxt-link to="/">
         <h1>
           <span class="mdi mdi-jellyfish"></span>
-          <span style="font-weight: 300">Movie</span>Night
+          <span style="font-weight: 300">Kurd</span>Cinema
         </h1>
       </nuxt-link>
       <avatar />
