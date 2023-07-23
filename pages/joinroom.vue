@@ -56,6 +56,7 @@ export default {
 button {
   margin: 0 auto;
 }
+ 
 .plyr__progress
   {
   display:none !important;
