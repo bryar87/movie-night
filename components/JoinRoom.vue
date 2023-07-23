@@ -63,9 +63,13 @@ export default {
 
 <style lang="scss" scoped>
 
-    .plyr__progress
+ .plyr__progress
   {
-    display:none !important
+  display:none !important;
+  }
+.plyr__controls__item plyr__progress__container
+  {
+   display:none !important;
   }
   
 .container {
