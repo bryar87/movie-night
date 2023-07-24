@@ -1,7 +1,7 @@
 <template>
   <div class="participant">
     <div class="image" ref="image">
-      <span class="mdi mdi-jellyfish"></span>
+      <span class="mdi mdi-theater"></span>
       <!-- <div class="ready">
         <span v-if="info.ready" class="mdi mdi-check-circle green"></span>
         <span v-else class="mdi mdi-minus-circle red"></span>

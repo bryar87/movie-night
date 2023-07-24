@@ -2,7 +2,7 @@
   <div class="user" v-if="loggedIn" @click="logout">
     <p>{{ nickName }}</p>
     <div class="image" ref="userImage">
-      <span class="mdi mdi-jellyfish"></span>
+      <span class="mdi mdi-theater"></span>
     </div>
   </div>
 </template>

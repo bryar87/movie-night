@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <button class="menuIcon" @click="clickMenu" style="margin-bottom: 2rem; margin-left: auto; width: 50px; height: 50px; box-shadow: none;">
+      <span class="mdi mdi-menu" style="margin: 0;"></span>
+    </button>
     <div class="player-bg">
       <div class="player-wrapper" ref="playerWrapper">
         <vue-plyr :options="playerOptions" ref="player">
@@ -74,8 +77,14 @@ export default {
       this.setPlayer();
     }
   },
+  props: {
+    toggleMenuClass: { type: Function },
+  },
   methods: {
     ...mapActions(["sync", "addVideo"]),
+    clickMenu() {
+      this.toggleMenuClass();
+    },
     addSource(subtitleUrl) {
       const player = this.$refs.player.player;
       let source = {
@@ -217,6 +226,7 @@ export default {
   flex-flow: column;
   height: 100%;
   width: 100%;
+    overflow: hidden;
 }
 .player-bg {
   width: 100%;
@@ -236,4 +246,16 @@ export default {
   width: 100%;
   overflow: hidden;
 }
+
+.menuIcon {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .menuIcon {
+  display: flex;
+}
+
+}
+
 </style>

@@ -1,19 +1,25 @@
 <template>
   <div class="container">
     <div class="setup-bg">
+      <!-- <button class="menuIcon" @click="clickMenu"
+        style="margin-bottom: 2rem; margin-left: auto; width: 50px; height: 50px; box-shadow: none;">
+        <span class="mdi mdi-menu" style="margin: 0;"></span>
+      </button> -->
+
+      <button class="menuIcon" @click="clickMenu"
+        style="margin-bottom: 2rem; margin-left: auto; width: 50px; height: 50px; box-shadow: none;">
+        <span class="mdi mdi-menu" style="margin: 0;"></span>
+      </button>
+
       <h3>Join Room</h3>
 
       <!-- Room exists -->
       <div class="content" v-if="room.started">
         <div class="room-info">
-          <div
-            class="thumbnail"
-            :style="`background-image: url(${room.imageLink})`"
-          ></div>
+          <div class="thumbnail" :style="`background-image: url(${room.imageLink})`"></div>
           <p class="room-name">{{ room.name }}</p>
           <p class="online">
-            <span class="mdi mdi-access-point"></span
-            >{{ room.participants.length }} online
+            <span class="mdi mdi-access-point"></span>{{ room.participants.length }} online
           </p>
         </div>
         <div class="join">
@@ -44,40 +50,40 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex"
 export default {
   data() {
-    return { nickName: null };
+    return { nickName: null }
+  },
+  props: {
+    toggleMenuClass: { type: Function },
   },
   computed: {
     ...mapState(["loggedIn", "room"])
   },
   methods: {
-    ...mapActions(["joinRoom", "fetchRoom"])
+    ...mapActions(["joinRoom", "fetchRoom"]),
+    clickMenu() {
+      console.log("clickMenu")
+      this.toggleMenuClass()
+    },
   },
+
+
   created() {
     // this.fetchRoom(this.$route.params.room);
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-
- .plyr__progress
-  {
-  display:none !important;
-  }
-.plyr__controls__item plyr__progress__container
-  {
-   display:none !important;
-  }
-  
 .container {
   width: 100%;
   max-width: 100%;
   flex: 1;
   display: flex;
 }
+
 .setup-bg {
   width: 100%;
   max-width: 100%;
@@ -94,6 +100,15 @@ export default {
   box-shadow: 0 3rem 4rem rgba(#000, 0.4);
   overflow: hidden;
   padding: 2rem;
+  position: relative;
+}
+
+.menuIcon {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  display: none;
+  z-index: 99;
 }
 
 h3 {
@@ -108,17 +123,27 @@ h3 {
   width: 100%;
 }
 
+@media screen and (max-width: 750px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .menuIcon {
+    display: block;
+  }
+}
+
 .room-info,
 .join {
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   padding: 2rem;
 }
+
 .room-info {
-  border-right: 1px solid rgba(#fff, 0.1);
   .thumbnail {
     width: 200px;
     height: 200px;
@@ -134,12 +159,14 @@ h3 {
     align-items: center;
     justify-content: center;
   }
+
   .room-name {
     max-width: 220px;
     text-align: center;
     line-height: 1.6;
     margin-bottom: 1rem;
   }
+
   .online {
     display: flex;
     align-items: center;
@@ -147,6 +174,7 @@ h3 {
     background: rgba(#fff, 0.07);
     border-radius: 200px;
     line-height: 1;
+
     span {
       font-size: 1.5rem;
       margin-right: 0.5rem;
@@ -165,10 +193,12 @@ h3 {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+
   .alert-icon {
     font-size: 4rem;
     color: rgb(255, 208, 1);
   }
+
   p {
     margin-top: 0.5rem;
     margin-bottom: 3rem;

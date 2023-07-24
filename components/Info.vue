@@ -2,7 +2,7 @@
   <div class="card">
     <div class="popcorn">🍿</div>
     <div class="what">
-      <h3>watch movies together</h3>
+      <h3>What is this?</h3>
       <p>Sync play local and YouTube videos with your friends</p>
     </div>
     <div class="bottom">
@@ -22,16 +22,21 @@
             <p>Links</p>
           </div>
         </div>
+        <!-- <div class="contribute">
+          <button @click="contribute">
+            <span class="mdi mdi-github"></span>Contribute
+          </button>
+        </div> -->
         <div class="contribute">
           <button @click="contribute">
-         <span class="mdi mdi-facebook"></span>
-           </button>
-           <button @click="contribute2">
+            <span class="mdi mdi-facebook"></span>
+          </button>
+          <button @click="contribute2">
             <span class="mdi mdi-instagram"></span>
-           </button>
-           <button @click="contribute3">
-          <span class="mdi mdi-web"></span>
-           </button>
+          </button>
+          <button @click="contribute3">
+            <span class="mdi mdi-web"></span>
+          </button>
         </div>
       </div>
       <div class="steps">
@@ -53,15 +58,15 @@ export default {
   methods: {
     contribute() {
       window.open("https://www.facebook.com/kurdcinema.officiall", "_blank");
-    }
+    },
       contribute2() {
       window.open("https://www.instagram.com/kurdcinema.official/", "_blank");
-    }
+    },
       contribute3() {
       window.open("https://www.kurdcinama.com/", "_blank");
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -74,9 +79,11 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
+
   h3 {
     margin-bottom: 1rem;
   }
+
   p {
     margin: 0;
   }
@@ -91,6 +98,7 @@ export default {
 
 .bottom {
   display: flex;
+  gap: 1rem;
 }
 
 .what {
@@ -100,37 +108,43 @@ export default {
 
 .contribute {
   margin-top: 3rem;
- display: flex;
- align-items: center;
-  gap: 10px;
-  
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
   button {
-    width: 150px;
+    width: 50px;
     height: 50px;
     font-weight: 400;
     font-size: 1rem;
     background: rgb(42, 41, 63);
     color: #fff;
-    height: 50px;
-    width: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin: 0!important;
+  }
   }
 }
 
 .support {
   margin-right: 3rem;
+  margin: 0;
 }
+
 .support-items-wrapper {
   display: flex;
 }
+
 .support-item {
   display: flex;
   align-items: center;
   flex-flow: column;
   width: fit-content;
   margin-right: 1.5rem;
+
   .icon {
     width: 58px;
     height: 58px;
@@ -141,11 +155,13 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
   }
+
   p {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.8);
   }
 }
+
 .support-item:last-child {
   margin: 0;
 }
@@ -153,15 +169,18 @@ export default {
 .youtube {
   background-image: url("~/assets/icons/youtube.svg");
 }
+
 .file {
   background-image: url("~/assets/icons/file.png");
 }
+
 .link {
   background-image: url("~/assets/icons/link.png");
 }
 
 .steps {
   min-width: 230px;
+
   ul {
     list-style: none;
   }
@@ -184,4 +203,23 @@ export default {
     border-radius: 50%;
   }
 }
-</style>
+
+
+@media screen and (max-width: 550px) {
+  .bottom {
+    flex-direction: column
+  }
+
+  .card {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .steps {
+    margin-top: 2rem;
+  }
+
+  .popcorn {
+    display: none;
+  }
+}</style>

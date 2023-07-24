@@ -153,6 +153,33 @@ export default {
   padding: 2rem;
 }
 
+@media screen and (max-width: 700px) {
+  .setup-bg {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0rem;
+  }
+
+  .setup-bg > .add-video {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .setup-bg h3 {
+    font-size: 1.4rem;
+  }
+
+  .setup-bg > .add-video {
+    // width: 100%;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+  }
+}
+
+
 h3 {
   font-size: 2rem;
   margin-bottom: 1rem;

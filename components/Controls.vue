@@ -1,19 +1,19 @@
 <template>
   <div class="controls-container">
     <div class="room">
-      <h3>
+
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h3>
         ROOM
-        <span
-          class="mdi mdi-cog room-settings"
-          v-if="isHost"
-          @click="$emit('editRoom')"
-        ></span>
+        <span class="mdi mdi-cog room-settings" v-if="isHost" @click="$emit('editRoom')"></span>
       </h3>
+      <button class="closeMenuIcon" @click="clickMenu" style="margin-bottom: 2rem; width: 30px; height: 30px; box-shadow: none;">
+        <span class="mdi mdi-close" style="margin: 0;"></span>
+      </button>
+      </div>
+
       <div class="room-wrapper">
-        <div
-          class="room-image"
-          :style="`background-image: url(${room.imageLink})`"
-        ></div>
+        <div class="room-image" :style="`background-image: url(${room.imageLink})`"></div>
         <div class="room-text">
           <p class="room-name">
             {{ room.name || "--" }}
@@ -36,12 +36,7 @@
         PARTICIPANTS
         <span class="participants-count">{{ room.participants.length }}</span>
       </h3>
-      <participant
-        v-for="(p, index) of participants"
-        :info="p"
-        :isHost="isHost"
-        :key="index"
-      />
+      <participant v-for="(p, index) of participants" :info="p" :isHost="isHost" :key="index" />
     </div>
 
     <div class="controls">
@@ -73,13 +68,18 @@
 
 <script>
 export default {
-  props: ["room", "isHost"],
+  props: ["room", "isHost", "toggleMenuClass"],
+  methods: {
+    clickMenu() {
+      this.toggleMenuClass();
+    },
+  },
   computed: {
     participants() {
-      return this.room.participants.filter(p => p.id !== this.room.host.id);
+      return this.room.participants.filter(p => p.id !== this.room.host.id)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -108,6 +108,7 @@ h3 {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
 .participants-count {
   font-weight: 400;
   margin-left: 1rem;
@@ -118,11 +119,13 @@ h3 {
   width: 100%;
   padding: 2rem 2rem;
 }
+
 .controls-b {
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   button {
     min-width: 80px;
     width: fit-content;
@@ -134,14 +137,17 @@ h3 {
     background: rgba(#f00, 0.2);
     border: 1px solid rgba(#f00, 0.3);
   }
+
   button:hover {
     box-shadow: none;
     background: rgba(#f00, 0.5);
   }
+
   button:active {
     background: rgba(#f00, 0.2);
   }
 }
+
 .controls-br {
   span {
     font-size: 1.3rem;
@@ -151,9 +157,11 @@ h3 {
     transition: $trans-short;
     user-select: none;
   }
+
   span:hover {
     color: #fff;
   }
+
   span:active {
     color: rgba(#fff, 0.8);
   }
@@ -164,9 +172,11 @@ h3 {
   padding-bottom: 2rem;
   border-bottom: 2px solid rgba(#fff, 0.1);
 }
+
 .room-code {
   margin-top: 1.5rem;
   color: rgba(#fff, 0.8);
+
   span {
     color: #fff;
     font-weight: 600;
@@ -174,6 +184,7 @@ h3 {
     margin-right: 0.5rem;
   }
 }
+
 .room-settings {
   font-size: 1rem;
   margin-left: 1rem;
@@ -181,16 +192,20 @@ h3 {
   cursor: pointer;
   transition: $trans-short;
 }
+
 .room-settings:hover {
   color: #fff;
 }
+
 .room-settings:active {
   color: rgba(#fff, 0.8);
 }
+
 .room-wrapper {
   display: flex;
   align-items: center;
 }
+
 .room-image {
   width: 100px;
   height: 100px;
@@ -205,6 +220,7 @@ h3 {
   border-radius: 1rem;
   margin-right: 1rem;
 }
+
 .room-name {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -214,13 +230,37 @@ h3 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
 .room-text button {
   width: 100px;
   height: 36px;
   padding-bottom: 2px;
   font-size: 0.9rem;
+
   span {
     font-size: 1.1rem;
   }
 }
-</style>
+
+.closeMenuIcon {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .controls-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+  }
+
+  .controls-container-active {
+    transform: translateX(0);
+  }
+
+  .closeMenuIcon {
+    display: flex;;
+  }
+}</style>
+
