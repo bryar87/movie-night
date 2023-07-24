@@ -9,10 +9,10 @@
     <div class="player-container">
       <div class="top-nav">
         <nuxt-link to="/">
-          <h1>
-            <span class="mdi mdi-theater"></span>
-            <span style="font-weight: 300">Movie</span>Night
-          </h1>
+           <h1>
+         <span class="mdi mdi-theater"></span>
+          K<span style="font-weight: 300">urd</span>C<span style="font-weight: 300">inema</span>
+        </h1>
         </nuxt-link>
         <avatar />
       </div>
@@ -28,10 +28,7 @@
       <join-room v-else :toggleMenuClass="toggleMenuClass" />
 
       <footer>
-        Made with ❤️ by
-        <a href="https://www.instagram.com/emanuel.christo/" target="_blank"
-          >Cris</a
-        >
+        Made with by Cris
       </footer>
 
       <invite
