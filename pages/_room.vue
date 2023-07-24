@@ -9,10 +9,10 @@
     <div class="player-container">
       <div class="top-nav">
         <nuxt-link to="/">
-         <h1>
-         <span class="mdi mdi-theater"></span>
-          K<span style="font-weight: 300">urd</span>C<span style="font-weight: 300">inema</span>
-        </h1>
+          <h1>
+            <span class="mdi mdi-theater"></span>
+            <span style="font-weight: 300">Movie</span>Night
+          </h1>
         </nuxt-link>
         <avatar />
       </div>
@@ -21,15 +21,18 @@
         v-if="room.started && room.playing && room.joined && room.video.link"
         @stop="stop"
         @sync="sync"
+        :toggleMenuClass="toggleMenuClass"
       />
       <room-setup v-else-if="room.joined && isHost" />
       <video-stopped v-else-if="room.started & room.joined && !isHost" />
-      <join-room v-else />
+      <join-room v-else :toggleMenuClass="toggleMenuClass" />
 
-   <footer>
-      Made with by Cris <br>
-      Watch Movies Together Online
-     </footer>
+      <footer>
+        Made with ❤️ by
+        <a href="https://www.instagram.com/emanuel.christo/" target="_blank"
+          >Cris</a
+        >
+      </footer>
 
       <invite
         :show="inviteShow"
@@ -46,6 +49,7 @@
     <controls
       :room="room"
       :isHost="isHost"
+      :toggleMenuClass="toggleMenuClass"
       @leave-room="leaveRoom"
       @editRoom="editRoomShow = true"
       @invite="inviteShow = true"
@@ -101,7 +105,15 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["stop", "sync", "login", "fetchRoom", "leaveRoom"])
+    ...mapActions(["stop", "sync", "login", "fetchRoom", "leaveRoom"]),
+    toggleMenuClass: () => {
+      const controlsContainer = document.querySelector(".controls-container")
+      if (controlsContainer.classList.contains("controls-container-active")) {
+        controlsContainer.classList.remove("controls-container-active")
+      } else {
+        controlsContainer.classList.add("controls-container-active")
+      }
+    }
   },
   created() {
     this.login().then(() => this.fetchRoom(this.$route.params.room));
@@ -120,7 +132,14 @@ export default {
   justify-content: space-between;
 }
 
-  
+@media screen and (max-width: 410px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+}
+
 .player-container {
   height: 100%;
   display: flex;
@@ -226,6 +245,4 @@ footer {
     );
   background-size: 68px 68px;
 }
-
- 
 </style>

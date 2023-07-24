@@ -20,16 +20,16 @@ export default {
   components: { Info },
   layout: "landing",
   computed: {
-    ...mapState(["loggedIn"])
+    ...mapState(["loggedIn"]),
   },
   methods: {
     ...mapActions(["createRoom"]),
     createRoomLocal() {
       if (this.loggedIn)
-        this.createRoom().then(roomId => this.$router.push(`/${roomId}`));
+        this.createRoom().then((roomId) => this.$router.push(`/${roomId}`));
       else this.$router.push("/createroom");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -40,6 +40,17 @@ export default {
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width: 1100px) {
+  .wrapper {
+    flex-flow: column;
+  }
+
+  .wrapper > .card {
+    margin-top: 2rem;
+  }
+}
+
 
 .container {
   padding: 0 3rem 0 2rem;
