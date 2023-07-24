@@ -20,7 +20,8 @@
     </div>
 
     <footer>
-      Made with by Cris
+      Made with by Cris <br>
+      Watch Movies Together Online
      </footer>
   </div>
 </template>
