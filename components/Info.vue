@@ -2,7 +2,7 @@
   <div class="card">
     <div class="popcorn">🍿</div>
     <div class="what">
-      <h3>What is this?</h3>
+      <h3>watch movies together</h3>
       <p>Sync play local and YouTube videos with your friends</p>
     </div>
     <div class="bottom">
@@ -24,8 +24,14 @@
         </div>
         <div class="contribute">
           <button @click="contribute">
-            <span class="mdi mdi-github"></span>Contribute
-          </button>
+         <span class="mdi mdi-facebook"></span>
+           </button>
+           <button @click="contribute2">
+            <span class="mdi mdi-instagram"></span>
+           </button>
+           <button @click="contribute3">
+          <span class="mdi mdi-web"></span>
+           </button>
         </div>
       </div>
       <div class="steps">
@@ -46,7 +52,13 @@
 export default {
   methods: {
     contribute() {
-      window.open("https://github.com/emanuelchristo/movie-night", "_blank");
+      window.open("https://www.facebook.com/kurdcinema.officiall", "_blank");
+    }
+      contribute2() {
+      window.open("https://www.instagram.com/kurdcinema.official/", "_blank");
+    }
+      contribute3() {
+      window.open("https://www.kurdcinama.com/", "_blank");
     }
   }
 };
@@ -88,6 +100,10 @@ export default {
 
 .contribute {
   margin-top: 3rem;
+ display: flex;
+ align-items: center;
+  gap: 10px;
+  
   button {
     width: 150px;
     height: 50px;
@@ -95,6 +111,11 @@ export default {
     font-size: 1rem;
     background: rgb(42, 41, 63);
     color: #fff;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
