@@ -9,10 +9,10 @@
     <div class="player-container">
       <div class="top-nav">
         <nuxt-link to="/">
-          <h1>
-            <span class="mdi mdi-jellyfish"></span>
-            <span style="font-weight: 300">Movie</span>Night
-          </h1>
+         <h1>
+         <span class="mdi mdi-theater"></span>
+          K<span style="font-weight: 300">urd</span>C<span style="font-weight: 300">inema</span>
+        </h1>
         </nuxt-link>
         <avatar />
       </div>
@@ -26,12 +26,10 @@
       <video-stopped v-else-if="room.started & room.joined && !isHost" />
       <join-room v-else />
 
-      <footer>
-        Made with ❤️ by
-        <a href="https://www.instagram.com/emanuel.christo/" target="_blank"
-          >Cris</a
-        >
-      </footer>
+   <footer>
+      Made with by Cris <br>
+      Watch Movies Together Online
+     </footer>
 
       <invite
         :show="inviteShow"
