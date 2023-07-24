@@ -2,8 +2,8 @@
   <div class="card">
     <div class="popcorn">🍿</div>
     <div class="what">
-      <h3>What is this?</h3>
-      <p>Sync play local and YouTube videos with your friends</p>
+      <h3>Watch Movies Together Online</h3>
+      <p>Sync play local,URL and YouTube videos with your friends</p>
     </div>
     <div class="bottom">
       <div class="support">
