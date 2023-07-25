@@ -7,10 +7,14 @@
     </div>
     <div class="top-nav">
       <nuxt-link to="/">
+        <!-- <h1>
+          <span class="mdi mdi-theater"></span>
+          <span style="font-weight: 300">Movie</span>Night
+        </h1> -->
         <h1>
-         <span class="mdi mdi-theater"></span>
-          K<span style="font-weight: 300">urd</span>C<span style="font-weight: 300">inema</span>
-        </h1>
+<span class="mdi mdi-theater"></span>
+K<span style="font-weight: 300">urd</span>C<span style="font-weight: 300">inema</span>
+</h1>
       </nuxt-link>
       <avatar />
     </div>
@@ -20,9 +24,11 @@
     </div>
 
     <footer>
-      Made with by Cris <br>
-      Watch Movies Together Online
-     </footer>
+      Made with by
+      <a href="https://www.instagram.com/emanuel.christo/" target="_blank"
+        >Cris</a
+      >
+    </footer>
   </div>
 </template>
 
@@ -32,11 +38,11 @@ import Avatar from "../components/Avatar.vue";
 export default {
   components: { Avatar },
   methods: {
-    ...mapActions(["login"])
+    ...mapActions(["login"]),
   },
   created() {
     this.login();
-  }
+  },
 };
 </script>
 
@@ -49,9 +55,10 @@ export default {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
+  overflow: hidden;
 }
-
 .modal-card {
+  position: static;
   min-width: 340px;
   width: fit-content;
   height: fit-content;
@@ -67,6 +74,14 @@ export default {
   border: 2px solid rgba(#fff, 0.1);
   backdrop-filter: blur(40px);
   box-shadow: 0 3rem 4rem rgba(#000, 0.4);
+}
+
+@media screen and (max-width: 700px) {
+  .modal-card {
+    min-width: auto;
+    width: 90%;
+    height: 100%;
+  }
 }
 
 footer {
