@@ -103,15 +103,16 @@ export default {
   },
   methods: {
     ...mapActions(["stop", "sync", "login", "fetchRoom", "leaveRoom"]),
-    toggleMenuClass: () => {
+  toggleMenuClass: () => {
       const controlsContainer = document.querySelector(".controls-container")
+      if (!controlsContainer) return
+
       if (controlsContainer.classList.contains("controls-container-active")) {
         controlsContainer.classList.remove("controls-container-active")
       } else {
         controlsContainer.classList.add("controls-container-active")
       }
-    }
-  },
+    },
   created() {
     this.login().then(() => this.fetchRoom(this.$route.params.room));
   }
